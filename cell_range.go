@@ -53,7 +53,7 @@ func (h *HyperLink) String(wb *WorkBook) []string {
 	if h.IsUrl {
 		str = fmt.Sprintf("%s(%s)", h.Description, h.Url)
 	} else {
-		str = h.ExtendedFilePath
+		str = h.Description
 	}
 
 	for i := uint16(0); i < h.LastColB-h.FristColB+1; i++ {
