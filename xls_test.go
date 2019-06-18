@@ -7,10 +7,10 @@ import (
 )
 
 func TestOpen(t *testing.T) {
-	if xlFile, err := Open("t1.xls", "utf-8"); err == nil {
+	if xlFile, err := Open("Table.xls", "utf-8"); err == nil {
 		if sheet1 := xlFile.GetSheet(0); sheet1 != nil {
 			fmt.Println("Total Lines ", sheet1.MaxRow, sheet1.Name)
-			for i := 265; i <= 267; i++ {
+			for i := 0; i <= int(sheet1.MaxRow); i++ {
 				fmt.Printf("row %v point %v \n", i, sheet1.Row(i))
 				if sheet1.Row(i) == nil {
 					continue
